@@ -1,0 +1,6 @@
+{
+  "name": "ScreenCraft Studio - Diseñador de Pantallas y Visor Móvil",
+  "description": "Explora, personaliza y vincula imágenes desde HTML en pantallas interactivas de alta fidelidad con simulador de dispositivos móviles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
