@@ -1,28 +1,72 @@
-@import "tailwindcss";
+/* ==========================================================
+   CarpinterSoft - Estilos Globales
+   Paleta Oficial: Azul Petróleo + Naranja
+   ========================================================== */
 
-@theme {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+/* --- Variables de Diseño (Paleta Oficial CarpinterSoft) --- */
+:root {
+  --azul-petroleo-oscuro: #103E4A;
+  --azul-petroleo:        #0D4F60;
+  --azul-profundo:        #09252D;
+  --azul-claro:           #1A677B;
+  --azul-borde:           #175667;
+
+  --naranja:              #ED991F;
+  --naranja-oscuro:       #E58D17;
+  --naranja-claro:        #F3B14F;
+
+  --crema:                #F7F5EF;
+  --blanco:               #FFFFFF;
+  --gris-claro:           #F0EEE8;
+
+  --fuente-sans:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --fuente-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --fuente-mono:    'JetBrains Mono', monospace;
 }
 
-/* Custom sleek woodcraft scrollbar */
+/* --- Reset y Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--fuente-sans);
+  background-color: var(--azul-profundo);
+  color: var(--crema);
+  min-height: 100vh;
+}
+
+/* --- Scrollbar Personalizada (Paleta CarpinterSoft) --- */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(28, 25, 23, 0.6);
+  background: var(--azul-petroleo-oscuro);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(180, 83, 9, 0.35);
+  background: var(--naranja-oscuro);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(217, 119, 6, 0.65);
+  background: var(--naranja);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--naranja-oscuro) var(--azul-petroleo-oscuro);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -33,11 +77,17 @@
   scrollbar-width: none;
 }
 
-/* Print Styles for Quotations and Workshop Orders */
+/* --- Seleccion de Texto --- */
+::selection {
+  background-color: var(--naranja);
+  color: var(--azul-petroleo-oscuro);
+}
+
+/* --- Estilos de Impresion (Cotizaciones y Hojas de Taller) --- */
 @media print {
   body {
-    background: white !important;
-    color: black !important;
+    background: #ffffff !important;
+    color: #000000 !important;
   }
   .no-print {
     display: none !important;

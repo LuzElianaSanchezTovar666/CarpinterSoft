@@ -133,7 +133,7 @@ $totalValor = array_reduce($inventario, fn($sum, $i) => $sum + ($i['stock'] * $i
       <div class="grid grid-cols-2 gap-3">
         <div>
           <label class="block text-[#F7F5EF] font-semibold mb-1">Categoría</label>
-          <select name="categoria" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-stone-200">
+          <select name="categoria" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-[#F7F5EF]">
             <option value="madera">Madera Maciza</option>
             <option value="tablero">Tablero / Melamina</option>
             <option value="herraje">Herraje</option>
@@ -142,7 +142,7 @@ $totalValor = array_reduce($inventario, fn($sum, $i) => $sum + ($i['stock'] * $i
         </div>
         <div>
           <label class="block text-[#F7F5EF] font-semibold mb-1">Unidad</label>
-          <select name="unidad" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-stone-200">
+          <select name="unidad" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-[#F7F5EF]">
             <option value="pie_tablar">Pies Tablares (pt)</option>
             <option value="plancha">Planchas / Láminas</option>
             <option value="par">Pares</option>
