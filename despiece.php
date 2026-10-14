@@ -28,7 +28,7 @@ if ($categoria === 'Mesa') {
     $piezas[] = ['nombre' => 'Peinazos Horizontales', 'cantidad' => 3, 'largo' => max(20, $ancho - 28), 'ancho' => 16, 'espesor' => 45, 'material' => $madera, 'canto' => 'Espigas dobles', 'veta' => 'ancho'];
     $piezas[] = ['nombre' => 'Tableros Realzados Moldurados', 'cantidad' => 2, 'largo' => max(20, ($alto - 45) / 2), 'ancho' => max(20, $ancho - 30), 'espesor' => 25, 'material' => $madera, 'canto' => 'Moldura perimetral', 'veta' => 'largo'];
 } else {
-    // Muebles modulares (Cocina, Clóset, Baño, Oficina, Especial)
+    // Muebles modulares
     $anchoInterno = max(10, $ancho - (2 * ($espesor / 10)));
     $piezas[] = ['nombre' => 'Laterales Estructurales (Costados)', 'cantidad' => 2, 'largo' => $alto, 'ancho' => $fondo, 'espesor' => $espesor, 'material' => $madera, 'canto' => $tapacanto, 'veta' => 'largo'];
     $piezas[] = ['nombre' => 'Techo y Suelo (Bases)', 'cantidad' => 2, 'largo' => round($anchoInterno, 1), 'ancho' => $fondo, 'espesor' => $espesor, 'material' => $madera, 'canto' => $tapacanto, 'veta' => 'ancho'];
@@ -64,11 +64,9 @@ foreach ($piezas as $pz) {
     }
 }
 
-// Tableros estándar 2.44 x 1.83m = 4.46 m² (80% aprovechamiento)
 $areaAprovechable = 4.46 * 0.8;
 $planchasRequeridas = max(1, ceil($totalAreaM2 / $areaAprovechable));
 
-// Costos
 $precioPlancha = 285000;
 if (stripos($madera, 'roble') !== false) $precioPlancha = 310000;
 if (stripos($madera, 'cedro') !== false) $precioPlancha = 330000;
@@ -89,14 +87,14 @@ $utilidad = $precioSugerido - $costoTotal;
 <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
 
   <!-- Encabezado -->
-  <div class="bg-stone-900/80 border border-stone-800 p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+  <div class="bg-[#103E4A]/80 border border-[#0D4F60] p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
     <div>
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold border border-amber-500/20 mb-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#09252D] text-[#ED991F] text-xs font-semibold border border-[#ED991F]/30 mb-2">
         <i data-lucide="scissors" class="w-3.5 h-3.5"></i>
         Optimizador & Cotizador Paramétrico (PHP Engine)
       </div>
-      <h2 class="text-xl sm:text-2xl font-black text-white font-display">Calculadora de Muebles & Despiece</h2>
-      <p class="text-stone-400 text-xs sm:text-sm mt-1">
+      <h2 class="text-xl sm:text-2xl font-black text-[#FFFFFF] font-display">Calculadora de Muebles & Despiece</h2>
+      <p class="text-[#F0EEE8]/80 text-xs sm:text-sm mt-1">
         Ingresa las medidas finales del mueble y el motor PHP calculará el despiece exacto para escuadradora o corte CNC, rendimiento de tableros y cotización.
       </p>
     </div>
@@ -106,21 +104,21 @@ $utilidad = $precioSugerido - $costoTotal;
     
     <!-- Formulario de Parámetros (5 cols) -->
     <div class="lg:col-span-5 space-y-6">
-      <form method="POST" action="despiece.php" class="bg-stone-900/80 border border-stone-800 p-5 rounded-2xl space-y-4">
-        <h3 class="text-sm font-bold text-white uppercase tracking-wider font-display flex items-center gap-2 border-b border-stone-800 pb-3">
-          <i data-lucide="settings-2" class="w-4 h-4 text-amber-400"></i>
+      <form method="POST" action="despiece.php" class="bg-[#103E4A]/80 border border-[#0D4F60] p-5 rounded-2xl space-y-4 shadow-xl">
+        <h3 class="text-sm font-bold text-[#FFFFFF] uppercase tracking-wider font-display flex items-center gap-2 border-b border-[#0D4F60] pb-3">
+          <i data-lucide="settings-2" class="w-4 h-4 text-[#ED991F]"></i>
           1. Especificaciones del Proyecto
         </h3>
 
         <div>
-          <label class="block text-xs font-semibold text-stone-300 mb-1">Nombre del Proyecto</label>
-          <input type="text" name="proyecto" value="<?= htmlspecialchars($proyecto) ?>" class="w-full px-3 py-2 bg-stone-950 border border-stone-800 rounded-xl text-xs text-white focus:outline-none focus:border-amber-500">
+          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Nombre del Proyecto</label>
+          <input type="text" name="proyecto" value="<?= htmlspecialchars($proyecto) ?>" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] focus:outline-none focus:border-[#ED991F]">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-stone-300 mb-1">Tipo de Mueble</label>
-            <select name="categoria" onchange="this.form.submit()" class="w-full px-3 py-2 bg-stone-950 border border-stone-800 rounded-xl text-xs text-stone-200">
+            <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Tipo de Mueble</label>
+            <select name="categoria" onchange="this.form.submit()" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#F7F5EF]">
               <option value="Cocina" <?= $categoria === 'Cocina' ? 'selected' : '' ?>>Cocina Integral</option>
               <option value="Closet" <?= $categoria === 'Closet' ? 'selected' : '' ?>>Clóset / Armario</option>
               <option value="Mesa" <?= $categoria === 'Mesa' ? 'selected' : '' ?>>Mesa de Comedor</option>
@@ -131,8 +129,8 @@ $utilidad = $precioSugerido - $costoTotal;
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-stone-300 mb-1">Madera / Tablero</label>
-            <select name="madera" class="w-full px-3 py-2 bg-stone-950 border border-stone-800 rounded-xl text-xs text-stone-200">
+            <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Madera / Tablero</label>
+            <select name="madera" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#F7F5EF]">
               <option value="Melamina Pelíkano Roble Sinatra 18mm" <?= $madera === 'Melamina Pelíkano Roble Sinatra 18mm' ? 'selected' : '' ?>>Melamina Roble 18mm</option>
               <option value="Melamina Blanco Lino Mate 18mm" <?= $madera === 'Melamina Blanco Lino Mate 18mm' ? 'selected' : '' ?>>Melamina Blanco Mate 18mm</option>
               <option value="Madera Roble Americano Macizo 2 pulgadas" <?= $madera === 'Madera Roble Americano Macizo 2 pulgadas' ? 'selected' : '' ?>>Roble Macizo</option>
@@ -143,47 +141,47 @@ $utilidad = $precioSugerido - $costoTotal;
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-stone-300 mb-1 flex items-center justify-between">
+          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1 flex items-center justify-between">
             <span>Dimensiones Finales (cm)</span>
-            <span class="text-[11px] text-amber-400 font-mono">Alto x Ancho x Fondo</span>
+            <span class="text-[11px] text-[#ED991F] font-mono">Alto x Ancho x Fondo</span>
           </label>
           <div class="grid grid-cols-3 gap-2">
             <div>
-              <input type="number" name="alto" value="<?= $alto ?>" class="w-full px-2.5 py-2 bg-stone-950 border border-stone-800 rounded-xl text-xs text-white text-center font-mono">
-              <span class="block text-[10px] text-stone-400 text-center mt-1">Alto (cm)</span>
+              <input type="number" name="alto" value="<?= $alto ?>" class="w-full px-2.5 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-mono">
+              <span class="block text-[10px] text-[#F0EEE8]/70 text-center mt-1">Alto (cm)</span>
             </div>
             <div>
-              <input type="number" name="ancho" value="<?= $ancho ?>" class="w-full px-2.5 py-2 bg-stone-950 border border-stone-800 rounded-xl text-xs text-white text-center font-mono">
-              <span class="block text-[10px] text-stone-400 text-center mt-1">Ancho (cm)</span>
+              <input type="number" name="ancho" value="<?= $ancho ?>" class="w-full px-2.5 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-mono">
+              <span class="block text-[10px] text-[#F0EEE8]/70 text-center mt-1">Ancho (cm)</span>
             </div>
             <div>
-              <input type="number" name="fondo" value="<?= $fondo ?>" class="w-full px-2.5 py-2 bg-stone-950 border border-stone-800 rounded-xl text-xs text-white text-center font-mono">
-              <span class="block text-[10px] text-stone-400 text-center mt-1">Fondo (cm)</span>
+              <input type="number" name="fondo" value="<?= $fondo ?>" class="w-full px-2.5 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-mono">
+              <span class="block text-[10px] text-[#F0EEE8]/70 text-center mt-1">Fondo (cm)</span>
             </div>
           </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-2 pt-2 border-t border-stone-800">
+        <div class="grid grid-cols-3 gap-2 pt-2 border-t border-[#0D4F60]">
           <div>
-            <label class="block text-[11px] font-semibold text-stone-300 mb-1 text-center">Puertas</label>
-            <input type="number" name="puertas" min="0" max="8" value="<?= $puertas ?>" class="w-full px-2 py-1.5 bg-stone-950 border border-stone-800 rounded-xl text-xs text-white text-center font-bold">
+            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1 text-center">Puertas</label>
+            <input type="number" name="puertas" min="0" max="8" value="<?= $puertas ?>" class="w-full px-2 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-bold">
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-stone-300 mb-1 text-center">Gavetas</label>
-            <input type="number" name="gavetas" min="0" max="8" value="<?= $gavetas ?>" class="w-full px-2 py-1.5 bg-stone-950 border border-stone-800 rounded-xl text-xs text-white text-center font-bold">
+            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1 text-center">Gavetas</label>
+            <input type="number" name="gavetas" min="0" max="8" value="<?= $gavetas ?>" class="w-full px-2 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-bold">
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-stone-300 mb-1 text-center">Repisas</label>
-            <input type="number" name="repisas" min="0" max="10" value="<?= $repisas ?>" class="w-full px-2 py-1.5 bg-stone-950 border border-stone-800 rounded-xl text-xs text-white text-center font-bold">
+            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1 text-center">Repisas</label>
+            <input type="number" name="repisas" min="0" max="10" value="<?= $repisas ?>" class="w-full px-2 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-bold">
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-stone-300 mb-1">Margen de Ganancia del Taller: <?= $margen ?>%</label>
-          <input type="range" name="margen" min="15" max="75" step="5" value="<?= $margen ?>" onchange="this.form.submit()" class="w-full accent-amber-500">
+          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Margen de Ganancia del Taller: <?= $margen ?>%</label>
+          <input type="range" name="margen" min="15" max="75" step="5" value="<?= $margen ?>" onchange="this.form.submit()" class="w-full accent-[#ED991F]">
         </div>
 
-        <button type="submit" class="w-full py-2.5 rounded-xl bg-amber-600/30 hover:bg-amber-600 text-amber-300 hover:text-stone-950 font-bold text-xs border border-amber-500/30 transition-all">
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-[#0D4F60] hover:bg-[#1A677B] text-[#FFFFFF] font-bold text-xs border border-[#ED991F]/40 transition-all shadow">
           Recalcular Despiece
         </button>
       </form>
@@ -193,54 +191,54 @@ $utilidad = $precioSugerido - $costoTotal;
     <div class="lg:col-span-7 space-y-6">
       
       <!-- Resumen Económico -->
-      <div class="bg-gradient-to-br from-stone-900 via-stone-900 to-amber-950/30 border border-amber-500/30 p-6 rounded-2xl shadow-xl">
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-stone-800">
+      <div class="bg-gradient-to-br from-[#103E4A] via-[#0D4F60] to-[#103E4A] border border-[#ED991F]/30 p-6 rounded-2xl shadow-2xl">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-[#0D4F60]">
           <div>
-            <span class="text-[10px] uppercase font-bold text-stone-400 block">Área Estimada</span>
-            <span class="text-xl font-black text-white font-mono"><?= round($totalAreaM2, 2) ?> m²</span>
-            <span class="text-[10px] text-stone-500 block"><?= count($piezas) ?> piezas</span>
+            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Área Estimada</span>
+            <span class="text-xl font-black text-[#FFFFFF] font-mono"><?= round($totalAreaM2, 2) ?> m²</span>
+            <span class="text-[10px] text-[#F0EEE8]/60 block"><?= count($piezas) ?> piezas</span>
           </div>
           <div>
-            <span class="text-[10px] uppercase font-bold text-stone-400 block">Tableros 2.44x1.83</span>
-            <span class="text-xl font-black text-amber-400 font-mono"><?= $planchasRequeridas ?> planchas</span>
-            <span class="text-[10px] text-stone-500 block">rendimiento ~80%</span>
+            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Tableros 2.44x1.83</span>
+            <span class="text-xl font-black text-[#ED991F] font-mono"><?= $planchasRequeridas ?> planchas</span>
+            <span class="text-[10px] text-[#F0EEE8]/60 block">rendimiento ~80%</span>
           </div>
           <div>
-            <span class="text-[10px] uppercase font-bold text-stone-400 block">Tapacanto PVC</span>
-            <span class="text-xl font-black text-sky-400 font-mono"><?= round($metrosCanto, 1) ?> m</span>
-            <span class="text-[10px] text-stone-500 block">lineales requeridos</span>
+            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Tapacanto PVC</span>
+            <span class="text-xl font-black text-[#F7F5EF] font-mono"><?= round($metrosCanto, 1) ?> m</span>
+            <span class="text-[10px] text-[#F0EEE8]/60 block">lineales requeridos</span>
           </div>
           <div>
-            <span class="text-[10px] uppercase font-bold text-stone-400 block">Herrajes</span>
-            <span class="text-xl font-black text-emerald-400 font-mono"><?= $puertas * 2 ?>B / <?= $gavetas ?>C</span>
-            <span class="text-[10px] text-stone-500 block">bisagras/correderas</span>
+            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Herrajes</span>
+            <span class="text-xl font-black text-[#ED991F] font-mono"><?= $puertas * 2 ?>B / <?= $gavetas ?>C</span>
+            <span class="text-[10px] text-[#F0EEE8]/60 block">bisagras/correderas</span>
           </div>
         </div>
 
-        <div class="py-4 space-y-2 border-b border-stone-800 text-xs">
-          <div class="flex justify-between text-stone-400">
+        <div class="py-4 space-y-2 border-b border-[#0D4F60] text-xs">
+          <div class="flex justify-between text-[#F0EEE8]/80">
             <span>Materia prima (tableros):</span>
-            <span class="font-mono text-stone-200"><?= formatCOP($costoMaterial) ?></span>
+            <span class="font-mono text-[#FFFFFF]"><?= formatCOP($costoMaterial) ?></span>
           </div>
-          <div class="flex justify-between text-stone-400">
+          <div class="flex justify-between text-[#F0EEE8]/80">
             <span>Herrajes y tiradores:</span>
-            <span class="font-mono text-stone-200"><?= formatCOP($costoHerrajes) ?></span>
+            <span class="font-mono text-[#FFFFFF]"><?= formatCOP($costoHerrajes) ?></span>
           </div>
-          <div class="flex justify-between text-stone-400">
+          <div class="flex justify-between text-[#F0EEE8]/80">
             <span>Mano de obra (corte y ensamble):</span>
-            <span class="font-mono text-stone-200"><?= formatCOP($costoManoObra) ?></span>
+            <span class="font-mono text-[#FFFFFF]"><?= formatCOP($costoManoObra) ?></span>
           </div>
-          <div class="flex justify-between text-stone-300 font-semibold pt-1 border-t border-stone-800">
+          <div class="flex justify-between text-[#F7F5EF] font-bold pt-1 border-t border-[#0D4F60]">
             <span>Costo Total Directo del Taller:</span>
-            <span class="font-mono text-amber-400"><?= formatCOP($costoTotal) ?></span>
+            <span class="font-mono text-[#ED991F]"><?= formatCOP($costoTotal) ?></span>
           </div>
         </div>
 
         <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span class="text-[11px] font-semibold text-stone-400 uppercase tracking-wider">Precio Sugerido al Cliente:</span>
-            <div class="text-3xl font-black text-amber-400 font-display"><?= formatCOP($precioSugerido) ?></div>
-            <p class="text-xs text-emerald-400 font-medium">Utilidad estimada: <?= formatCOP($utilidad) ?> (<?= $margen ?>%)</p>
+            <span class="text-[11px] font-semibold text-[#F0EEE8]/70 uppercase tracking-wider">Precio Sugerido al Cliente:</span>
+            <div class="text-3xl font-black text-[#ED991F] font-display"><?= formatCOP($precioSugerido) ?></div>
+            <p class="text-xs text-[#F7F5EF] font-medium">Utilidad estimada: <span class="text-[#ED991F]"><?= formatCOP($utilidad) ?></span> (<?= $margen ?>%)</p>
           </div>
 
           <form action="api/guardar_pedido.php" method="POST">
@@ -256,7 +254,7 @@ $utilidad = $precioSugerido - $costoTotal;
             <input type="hidden" name="cliente" value="Cliente de Cotizador">
             <input type="hidden" name="fecha_entrega" value="<?= date('Y-m-d', strtotime('+15 days')) ?>">
             <input type="hidden" name="prioridad" value="media">
-            <button type="submit" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 font-bold text-xs sm:text-sm shadow-lg shadow-amber-950/40">
+            <button type="submit" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#ED991F] to-[#E58D17] text-[#103E4A] font-extrabold text-xs sm:text-sm shadow-lg shadow-orange-950/50 hover:opacity-90 cursor-pointer">
               <i data-lucide="plus-circle" class="w-4 h-4"></i>
               <span>Convertir a Pedido</span>
             </button>
@@ -265,22 +263,22 @@ $utilidad = $precioSugerido - $costoTotal;
       </div>
 
       <!-- Tabla de Despiece para Escuadradora -->
-      <div class="bg-stone-900/80 border border-stone-800 rounded-2xl overflow-hidden shadow-xl">
-        <div class="p-4 bg-stone-950 border-b border-stone-800 flex items-center justify-between">
+      <div class="bg-[#103E4A]/80 border border-[#0D4F60] rounded-2xl overflow-hidden shadow-xl">
+        <div class="p-4 bg-[#09252D] border-b border-[#0D4F60] flex items-center justify-between">
           <div>
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider font-display flex items-center gap-2">
-              <i data-lucide="file-text" class="w-4 h-4 text-amber-400"></i>
+            <h4 class="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider font-display flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-[#ED991F]"></i>
               Plano de Despiece de Corte (<?= count($piezas) ?> piezas)
             </h4>
           </div>
-          <span class="text-xs font-mono text-amber-400 font-bold bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20">
+          <span class="text-xs font-mono text-[#103E4A] font-bold bg-[#ED991F] px-2 py-0.5 rounded">
             Medidas en cm
           </span>
         </div>
 
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs text-stone-300 font-mono">
-            <thead class="bg-stone-950/80 text-stone-400 text-[10px] uppercase font-bold tracking-wider border-b border-stone-800">
+          <table class="w-full text-left text-xs text-[#F0EEE8] font-mono">
+            <thead class="bg-[#0D4F60]/60 text-[#F7F5EF] text-[10px] uppercase font-bold tracking-wider border-b border-[#0D4F60]">
               <tr>
                 <th class="p-3">Pieza</th>
                 <th class="p-3 text-center">Cant.</th>
@@ -291,16 +289,16 @@ $utilidad = $precioSugerido - $costoTotal;
                 <th class="p-3">Veta</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-stone-800/80">
+            <tbody class="divide-y divide-[#0D4F60]/80">
               <?php foreach ($piezas as $pz): ?>
-                <tr class="hover:bg-stone-800/40">
-                  <td class="p-3 font-sans font-semibold text-white"><?= htmlspecialchars($pz['nombre']) ?></td>
-                  <td class="p-3 text-center font-bold text-amber-400"><?= $pz['cantidad'] ?></td>
-                  <td class="p-3 text-center text-stone-200"><?= $pz['largo'] ?></td>
-                  <td class="p-3 text-center text-stone-200"><?= $pz['ancho'] ?></td>
-                  <td class="p-3 text-center text-stone-400"><?= $pz['espesor'] ?> mm</td>
-                  <td class="p-3 font-sans text-[11px] text-stone-300"><?= htmlspecialchars($pz['canto']) ?></td>
-                  <td class="p-3 font-sans text-[11px] text-amber-400 capitalize"><?= $pz['veta'] ?></td>
+                <tr class="hover:bg-[#0D4F60]/40">
+                  <td class="p-3 font-sans font-semibold text-[#FFFFFF]"><?= htmlspecialchars($pz['nombre']) ?></td>
+                  <td class="p-3 text-center font-bold text-[#ED991F]"><?= $pz['cantidad'] ?></td>
+                  <td class="p-3 text-center text-[#F7F5EF]"><?= $pz['largo'] ?></td>
+                  <td class="p-3 text-center text-[#F7F5EF]"><?= $pz['ancho'] ?></td>
+                  <td class="p-3 text-center text-[#F0EEE8]/70"><?= $pz['espesor'] ?> mm</td>
+                  <td class="p-3 font-sans text-[11px] text-[#F7F5EF]"><?= htmlspecialchars($pz['canto']) ?></td>
+                  <td class="p-3 font-sans text-[11px] text-[#ED991F] capitalize"><?= $pz['veta'] ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>

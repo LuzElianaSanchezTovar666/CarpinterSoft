@@ -22,19 +22,24 @@ $paginaActual = basename($_SERVER['PHP_SELF'], '.php');
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            wood: {
-              50: '#fbf7f4',
-              100: '#f4ede6',
-              200: '#ead9cc',
-              300: '#dbbfa9',
-              400: '#c89e81',
-              500: '#b88160',
-              600: '#a76d4f',
-              700: '#8b5640',
-              800: '#714636',
-              900: '#5c3b2f',
-              950: '#321d17',
-            }
+            // Paleta Oficial CarpinterSoft
+            petroleo: {
+              DEFAULT: '#0D4F60', // Azul petróleo
+              oscuro: '#103E4A',  // Azul petróleo oscuro
+              profundo: '#09252D',
+              claro: '#1A677B',
+              borde: '#175667',
+            },
+            naranja: {
+              DEFAULT: '#ED991F', // Naranja
+              oscuro: '#E58D17',  // Naranja oscuro
+              claro: '#F3B14F',
+            },
+            crema: {
+              DEFAULT: '#F7F5EF', // Crema
+              suave: '#FAF9F5',
+            },
+            grisclaro: '#F0EEE8', // Gris claro
           }
         }
       }
@@ -50,11 +55,21 @@ $paginaActual = basename($_SERVER['PHP_SELF'], '.php');
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Sleek wood scrollbar */
+    :root {
+      --azul-petroleo-oscuro: #103E4A;
+      --azul-petroleo: #0D4F60;
+      --naranja: #ED991F;
+      --naranja-oscuro: #E58D17;
+      --crema: #F7F5EF;
+      --blanco: #FFFFFF;
+      --gris-claro: #F0EEE8;
+    }
+
+    /* Scrollbar con paleta personalizada */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: rgba(28, 25, 23, 0.6); }
-    ::-webkit-scrollbar-thumb { background: rgba(180, 83, 9, 0.35); border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(217, 119, 6, 0.65); }
+    ::-webkit-scrollbar-track { background: #103E4A; }
+    ::-webkit-scrollbar-thumb { background: #ED991F; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #E58D17; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     
@@ -65,4 +80,4 @@ $paginaActual = basename($_SERVER['PHP_SELF'], '.php');
     }
   </style>
 </head>
-<body class="bg-stone-950 text-stone-100 min-h-screen flex flex-col font-sans selection:bg-amber-600 selection:text-white">
+<body class="bg-[#09252D] text-crema min-h-screen flex flex-col font-sans selection:bg-naranja selection:text-petroleo-profundo">
