@@ -1,6 +1,6 @@
 {
-  "name": "ScreenCraft Studio - Diseñador de Pantallas y Visor Móvil",
-  "description": "Explora, personaliza y vincula imágenes desde HTML en pantallas interactivas de alta fidelidad con simulador de dispositivos móviles.",
+  "name": "CarpinterSoft - Sistema Integral de Carpintería y Ebanistería",
+  "description": "Software profesional para talleres de carpintería: gestión de pedidos y producción, cotizador con despiece inteligente de materiales, control de inventario y catálogo de muebles.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
