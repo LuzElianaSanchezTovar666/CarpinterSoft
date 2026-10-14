@@ -24,6 +24,12 @@ $esSubmenuActivo = in_array($paginaActual, ['inventario', 'catalogo', 'clientes'
             <span class="text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase px-1.5 py-0.5 rounded bg-[#0D4F60] text-[#ED991F] border border-[#ED991F]/30 hidden xs:inline-block">
               Pro
             </span>
+            <?php if (!Database::isUsingFallback()): ?>
+              <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 flex items-center gap-1 hidden sm:inline-flex" title="Base de Datos MySQL Conectada (Puerto <?= Database::getActivePort() ?>)">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                MySQL Live
+              </span>
+            <?php endif; ?>
           </div>
           <p class="text-[10px] sm:text-[11px] text-[#F7F5EF]/80 font-medium hidden lg:block leading-none">
             Gestión & Despiece de Carpintería
