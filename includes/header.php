@@ -73,11 +73,45 @@ $paginaActual = basename($_SERVER['PHP_SELF'], '.php');
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     
-    @media print {
-      body { background: white !important; color: black !important; }
-      .no-print { display: none !important; }
-      .print-only { display: block !important; }
+    /* Estilo Retro-Futurista: Fondo Blueprint sutil y Bento Grid */
+    body {
+      background-color: #09252D;
+      background-image: radial-gradient(rgba(13, 79, 96, 0.45) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Tarjetas Bento Grid Retro-Futuristas */
+    .bento-card {
+      background: linear-gradient(145deg, rgba(16, 62, 74, 0.88), rgba(9, 37, 45, 0.95));
+      border: 1px solid rgba(13, 79, 96, 0.85);
+      border-radius: 1.25rem;
+      backdrop-filter: blur(12px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(237, 153, 31, 0.65);
+      box-shadow: 0 10px 30px -10px rgba(237, 153, 31, 0.12), inset 0 1px 0 rgba(237, 153, 31, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Marcas técnicas vintage en esquinas */
+    .corner-mark::before {
+      content: '+';
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: rgba(237, 153, 31, 0.4);
+      pointer-events: none;
+    }
+
+    /* Medidores tipo gauge retro */
+    .retro-gauge {
+      background: repeating-linear-gradient(90deg, #0D4F60, #0D4F60 4px, transparent 4px, transparent 8px);
     }
   </style>
 </head>
-<body class="bg-[#09252D] text-crema min-h-screen flex flex-col font-sans selection:bg-naranja selection:text-petroleo-profundo">
+<body class="bg-[#09252D] text-crema min-h-screen flex flex-col font-sans selection:bg-naranja selection:text-petroleo-profundo antialiased">
