@@ -53,9 +53,13 @@ $pedidosUrgentes = array_slice($pedidosActivos, 0, 4);
       </div>
 
       <div class="flex flex-wrap items-center gap-3">
+        <a href="diseno3d.php" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0D4F60] hover:bg-[#1A677B] text-[#FFFFFF] border border-[#ED991F]/50 text-xs sm:text-sm font-bold transition-all shadow hover:scale-[1.02]">
+          <i data-lucide="box" class="w-4 h-4 text-[#ED991F]"></i>
+          <span>Diseñar en 3D (WebGL)</span>
+        </a>
         <a href="despiece.php" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#09252D] hover:bg-[#0D4F60] text-[#F7F5EF] border border-[#0D4F60] text-xs sm:text-sm font-semibold transition-all hover:border-[#ED991F]/40 shadow">
           <i data-lucide="scissors" class="w-4 h-4 text-[#ED991F]"></i>
-          <span>Cotizar con Despiece</span>
+          <span>Cotizar Despiece</span>
         </a>
         <button onclick="abrirModalNuevoPedido()" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#ED991F] to-[#E58D17] text-[#103E4A] font-extrabold text-xs sm:text-sm shadow-lg shadow-orange-950/40 transition-all cursor-pointer hover:opacity-95 active:scale-95">
           <i data-lucide="plus" class="w-4 h-4 text-[#103E4A]"></i>

@@ -46,6 +46,15 @@ $esSubmenuActivo = in_array($paginaActual, ['inventario', 'catalogo', 'clientes'
           <span>Panel</span>
         </a>
 
+        <!-- Vista Directa: Estudio 3D WebGL (Core Domain 1) -->
+        <a href="diseno3d.php" class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all relative <?= $paginaActual === 'diseno3d' ? 'bg-[#0D4F60] text-[#ED991F] border border-[#ED991F]/40 shadow-sm' : 'text-[#F0EEE8]/80 hover:text-[#FFFFFF] hover:bg-[#0D4F60]/50' ?>">
+          <i data-lucide="box" class="w-4 h-4 text-[#ED991F]"></i>
+          <span>Estudio 3D</span>
+          <span class="px-1 py-0.2 text-[9px] font-extrabold bg-[#ED991F]/20 text-[#ED991F] border border-[#ED991F]/30 rounded hidden lg:inline-block">
+            WebGL
+          </span>
+        </a>
+
         <!-- Vista Directa: Pedidos & Taller -->
         <a href="pedidos.php" class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all relative <?= $paginaActual === 'pedidos' ? 'bg-[#0D4F60] text-[#ED991F] border border-[#ED991F]/40 shadow-sm' : 'text-[#F0EEE8]/80 hover:text-[#FFFFFF] hover:bg-[#0D4F60]/50' ?>">
           <i data-lucide="clipboard-list" class="w-4 h-4"></i>
@@ -158,6 +167,16 @@ $esSubmenuActivo = in_array($paginaActual, ['inventario', 'catalogo', 'clientes'
         <a href="index.php" class="flex items-center gap-2 p-2.5 rounded-xl border <?= ($paginaActual === 'index' || $paginaActual === '') ? 'bg-[#0D4F60] text-[#ED991F] border-[#ED991F]/50 font-bold' : 'bg-[#09252D]/90 text-[#F0EEE8] border-[#0D4F60]' ?>">
           <i data-lucide="layout-dashboard" class="w-4 h-4 text-[#ED991F]"></i>
           <span>Panel General</span>
+        </a>
+
+        <a href="diseno3d.php" class="flex items-center justify-between p-2.5 rounded-xl border <?= $paginaActual === 'diseno3d' ? 'bg-[#0D4F60] text-[#ED991F] border-[#ED991F]/50 font-bold' : 'bg-[#09252D]/90 text-[#F0EEE8] border-[#0D4F60]' ?>">
+          <div class="flex items-center gap-2">
+            <i data-lucide="box" class="w-4 h-4 text-[#ED991F]"></i>
+            <span>Estudio 3D</span>
+          </div>
+          <span class="px-1 text-[9px] font-extrabold bg-[#ED991F]/20 text-[#ED991F] rounded">
+            WebGL
+          </span>
         </a>
 
         <a href="pedidos.php" class="flex items-center justify-between p-2.5 rounded-xl border <?= $paginaActual === 'pedidos' ? 'bg-[#0D4F60] text-[#ED991F] border-[#ED991F]/50 font-bold' : 'bg-[#09252D]/90 text-[#F0EEE8] border-[#0D4F60]' ?>">
