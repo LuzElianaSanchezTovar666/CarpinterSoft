@@ -1,6 +1,48 @@
 {
     "pedidos": [
         {
+            "cliente": "Cliente de Cotizador",
+            "telefono": "+57 300 000 0000",
+            "direccion": "Taller Central",
+            "proyecto": "Módulo de Cocina Integral Bajo",
+            "categoria": "Cocina",
+            "madera": "Melamina Pelíkano Roble Sinatra 18mm",
+            "acabado": "PVC 2mm en 4 cantos",
+            "alto": 90,
+            "ancho": 120,
+            "fondo": 60,
+            "estado": "cotizacion",
+            "prioridad": "media",
+            "precio": 2900000,
+            "costo": 1595000,
+            "anticipo": 1450000,
+            "fecha_entrega": "2026-10-29",
+            "carpintero": "Maestro Carlos Echeverry",
+            "notas": "",
+            "piezas": [
+                {
+                    "nombre": "Laterales Estructurales (Costados)",
+                    "cantidad": 2,
+                    "largo": 90,
+                    "ancho": 60,
+                    "espesor": 18,
+                    "material": "Melamina Pelíkano Roble Sinatra 18mm",
+                    "canto": "PVC 2mm en 4 cantos"
+                },
+                {
+                    "nombre": "Bases Superior e Inferior",
+                    "cantidad": 2,
+                    "largo": 116.4,
+                    "ancho": 60,
+                    "espesor": 18,
+                    "material": "Melamina Pelíkano Roble Sinatra 18mm",
+                    "canto": "PVC 2mm frontal"
+                }
+            ],
+            "id": 1792004158,
+            "codigo": "CP-2026-744"
+        },
+        {
             "id": 1,
             "codigo": "CP-2026-001",
             "cliente": "Arq. Roberto Méndez",

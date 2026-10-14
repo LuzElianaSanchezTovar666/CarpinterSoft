@@ -34,19 +34,19 @@ if (!$pedido) {
     }
   </style>
 </head>
-<body class="bg-[#09252D] text-stone-900 p-4 sm:p-8 flex flex-col items-center">
+<body class="bg-[#F7F5EF] text-stone-900 p-4 sm:p-8 flex flex-col items-center">
 
   <!-- Botones de Impresión (No visibles al imprimir) -->
-  <div class="no-print max-w-4xl w-full mb-6 flex items-center justify-between bg-[#103E4A] p-4 rounded-2xl border border-[#0D4F60] text-[#F7F5EF] shadow-xl">
+  <div class="no-print max-w-4xl w-full mb-6 flex items-center justify-between bg-white p-4 rounded-2xl border border-[#0D4F60]/20 text-[#103E4A] shadow-sm">
     <div class="flex items-center gap-2">
       <span class="text-xs font-bold text-[#103E4A] bg-[#ED991F] px-2 py-0.5 rounded font-mono">ORDEN #<?= htmlspecialchars($pedido['codigo']) ?></span>
-      <span class="text-xs text-[#F0EEE8]/80">• Vista de Impresión Oficial</span>
+      <span class="text-xs text-[#103E4A]/70">• Vista de Impresión Oficial de Taller</span>
     </div>
     <div class="flex items-center gap-3">
-      <button onclick="window.print()" class="px-5 py-2 bg-gradient-to-r from-[#ED991F] to-[#E58D17] text-[#103E4A] font-extrabold text-xs rounded-xl shadow cursor-pointer hover:opacity-90">
+      <button onclick="window.print()" class="px-5 py-2 bg-gradient-to-r from-[#ED991F] to-[#E58D17] text-[#103E4A] font-extrabold text-xs rounded-xl shadow cursor-pointer hover:opacity-90 transition-all">
         🖨️ Imprimir / Guardar PDF
       </button>
-      <a href="pedidos.php" class="px-4 py-2 bg-[#0D4F60] hover:bg-[#1A677B] text-[#FFFFFF] text-xs font-semibold rounded-xl border border-[#0D4F60]">
+      <a href="pedidos.php" class="px-4 py-2 bg-[#F0EEE8] hover:bg-[#103E4A] hover:text-white text-[#103E4A] text-xs font-semibold rounded-xl border border-[#0D4F60]/20 transition-all">
         Volver a Pedidos
       </a>
     </div>

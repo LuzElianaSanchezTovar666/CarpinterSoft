@@ -117,23 +117,23 @@ $inventario = getInventario();
     <!-- 2. Panel Paramétrico de Configuración (4 Columnas en desktop) -->
     <div class="lg:col-span-4 space-y-4">
 
-      <!-- Caja de Parámetros Geométricos -->
-      <div class="bg-[#103E4A]/90 border border-[#0D4F60] rounded-2xl p-4 sm:p-5 shadow-xl space-y-4">
+      <!-- Caja de Parámetros Geométricos (Fondo Blanco y Alto Contraste) -->
+      <div class="bento-card p-4 sm:p-5 shadow-xl space-y-4 bg-white text-[#103E4A]">
         
-        <div class="flex items-center justify-between border-b border-[#0D4F60] pb-2.5">
-          <h2 class="text-sm font-bold text-[#FFFFFF] font-display flex items-center gap-2">
+        <div class="flex items-center justify-between border-b border-[#0D4F60]/15 pb-2.5">
+          <h2 class="text-sm font-bold text-[#103E4A] font-display flex items-center gap-2">
             <i data-lucide="sliders" class="w-4 h-4 text-[#ED991F]"></i>
             Especificaciones Paramétricas
           </h2>
-          <span class="text-[10px] font-bold text-[#ED991F] uppercase tracking-wider bg-[#0D4F60] px-2 py-0.5 rounded">
+          <span class="text-[10px] font-bold text-[#E58D17] uppercase tracking-wider bg-[#ED991F]/15 px-2 py-0.5 rounded border border-[#ED991F]/30">
             En Vivo
           </span>
         </div>
 
         <!-- Tipo de Mueble -->
         <div>
-          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Tipo de Mueble</label>
-          <select id="tipoMuebleSelect" onchange="cambiarTipoMueble(this.value)" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] focus:outline-none focus:border-[#ED991F]">
+          <label class="block text-xs font-bold text-[#103E4A] mb-1">Tipo de Mueble</label>
+          <select id="tipoMuebleSelect" onchange="cambiarTipoMueble(this.value)" class="w-full px-3 py-2 bg-[#F8FAFC] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] font-semibold focus:outline-none focus:border-[#ED991F]">
             <option value="closet" selected>Clóset Vestidor / Módulo Ropero</option>
             <option value="cocina">Módulo Bajo de Cocina con Cajones</option>
             <option value="mesa">Mesa de Comedor Maciza (Patas en X)</option>
@@ -143,8 +143,8 @@ $inventario = getInventario();
 
         <!-- Material y Textura de Acabado -->
         <div>
-          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Madera / Acabado Superficial</label>
-          <select id="materialSelect" onchange="cambiarTexturaMaterial(this.value)" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] focus:outline-none focus:border-[#ED991F]">
+          <label class="block text-xs font-bold text-[#103E4A] mb-1">Madera / Acabado Superficial</label>
+          <select id="materialSelect" onchange="cambiarTexturaMaterial(this.value)" class="w-full px-3 py-2 bg-[#F8FAFC] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] font-semibold focus:outline-none focus:border-[#ED991F]">
             <option value="roble_sinatra" selected>Melamina Pelíkano Roble Sinatra 18mm</option>
             <option value="blanco_mate">Melamina Blanco Mate 18mm</option>
             <option value="grafito">Melamina Gris Grafito Texturizado 18mm</option>
@@ -158,37 +158,37 @@ $inventario = getInventario();
         <div class="space-y-3 pt-1">
           <!-- Alto -->
           <div>
-            <div class="flex justify-between text-xs text-[#F0EEE8] font-semibold mb-1">
+            <div class="flex justify-between text-xs text-[#103E4A] font-bold mb-1">
               <span>Alto Total</span>
-              <span id="lblAlto" class="text-[#ED991F] font-mono font-bold">210 cm</span>
+              <span id="lblAlto" class="text-[#E58D17] font-mono font-extrabold">210 cm</span>
             </div>
             <input type="range" id="inputAlto" min="70" max="260" value="210" step="5" oninput="actualizarDimensiones()" class="w-full accent-[#ED991F] cursor-pointer">
           </div>
 
           <!-- Ancho -->
           <div>
-            <div class="flex justify-between text-xs text-[#F0EEE8] font-semibold mb-1">
+            <div class="flex justify-between text-xs text-[#103E4A] font-bold mb-1">
               <span>Ancho Frontal</span>
-              <span id="lblAncho" class="text-[#ED991F] font-mono font-bold">180 cm</span>
+              <span id="lblAncho" class="text-[#E58D17] font-mono font-extrabold">180 cm</span>
             </div>
             <input type="range" id="inputAncho" min="60" max="300" value="180" step="5" oninput="actualizarDimensiones()" class="w-full accent-[#ED991F] cursor-pointer">
           </div>
 
           <!-- Fondo -->
           <div>
-            <div class="flex justify-between text-xs text-[#F0EEE8] font-semibold mb-1">
+            <div class="flex justify-between text-xs text-[#103E4A] font-bold mb-1">
               <span>Profundidad (Fondo)</span>
-              <span id="lblFondo" class="text-[#ED991F] font-mono font-bold">60 cm</span>
+              <span id="lblFondo" class="text-[#E58D17] font-mono font-extrabold">60 cm</span>
             </div>
             <input type="range" id="inputFondo" min="35" max="110" value="60" step="5" oninput="actualizarDimensiones()" class="w-full accent-[#ED991F] cursor-pointer">
           </div>
         </div>
 
         <!-- Elementos Interiores (Repisas y Cajones) -->
-        <div class="grid grid-cols-2 gap-3 pt-1 border-t border-[#0D4F60]">
+        <div class="grid grid-cols-2 gap-3 pt-1 border-t border-[#0D4F60]/15">
           <div>
-            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1">Repisas</label>
-            <select id="selectRepisas" onchange="actualizarEstructuraInterna()" class="w-full px-2.5 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF]">
+            <label class="block text-[11px] font-bold text-[#103E4A] mb-1">Repisas</label>
+            <select id="selectRepisas" onchange="actualizarEstructuraInterna()" class="w-full px-2.5 py-1.5 bg-[#F8FAFC] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] font-semibold">
               <option value="1">1 Repisa</option>
               <option value="2">2 Repisas</option>
               <option value="3" selected>3 Repisas</option>
@@ -197,8 +197,8 @@ $inventario = getInventario();
             </select>
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1">Cajones</label>
-            <select id="selectCajones" onchange="actualizarEstructuraInterna()" class="w-full px-2.5 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF]">
+            <label class="block text-[11px] font-bold text-[#103E4A] mb-1">Cajones</label>
+            <select id="selectCajones" onchange="actualizarEstructuraInterna()" class="w-full px-2.5 py-1.5 bg-[#F8FAFC] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] font-semibold">
               <option value="0">Sin cajones</option>
               <option value="2" selected>2 Cajones</option>
               <option value="3">3 Cajones</option>
@@ -210,38 +210,38 @@ $inventario = getInventario();
       </div>
 
       <!-- 3. Motor de Cotización & Volumetría en Tiempo Real (Core Domain 2) -->
-      <div class="bg-gradient-to-br from-[#103E4A] to-[#09252D] border border-[#0D4F60] rounded-2xl p-4 sm:p-5 shadow-xl space-y-3">
-        <div class="flex items-center justify-between border-b border-[#0D4F60] pb-2">
-          <span class="text-xs font-bold uppercase text-[#F0EEE8]/80 tracking-wider">Cálculo de Volumetría & Costos</span>
+      <div class="bento-card p-4 sm:p-5 shadow-xl space-y-3 bg-white text-[#103E4A]">
+        <div class="flex items-center justify-between border-b border-[#0D4F60]/15 pb-2">
+          <span class="text-xs font-bold uppercase text-[#103E4A] tracking-wider">Cálculo de Volumetría & Costos</span>
           <i data-lucide="calculator" class="w-4 h-4 text-[#ED991F]"></i>
         </div>
 
         <div class="grid grid-cols-2 gap-2 text-[11px]">
-          <div class="bg-[#09252D] p-2.5 rounded-xl border border-[#0D4F60]">
-            <span class="text-[#F0EEE8]/60 block">Área Tableros</span>
-            <span id="metricArea" class="font-bold text-[#FFFFFF] font-mono text-xs">8.64 m²</span>
+          <div class="bg-[#F8FAFC] p-2.5 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[#0D4F60]/70 block font-medium">Área Tableros</span>
+            <span id="metricArea" class="font-extrabold text-[#103E4A] font-mono text-xs">8.64 m²</span>
           </div>
-          <div class="bg-[#09252D] p-2.5 rounded-xl border border-[#0D4F60]">
-            <span class="text-[#F0EEE8]/60 block">Planchas Estimadas</span>
-            <span id="metricPlanchas" class="font-bold text-[#ED991F] font-mono text-xs">2.2 planchas</span>
+          <div class="bg-[#F8FAFC] p-2.5 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[#0D4F60]/70 block font-medium">Planchas Estimadas</span>
+            <span id="metricPlanchas" class="font-extrabold text-[#E58D17] font-mono text-xs">2.2 planchas</span>
           </div>
-          <div class="bg-[#09252D] p-2.5 rounded-xl border border-[#0D4F60]">
-            <span class="text-[#F0EEE8]/60 block">Tapacanto PVC 2mm</span>
-            <span id="metricCanto" class="font-bold text-[#FFFFFF] font-mono text-xs">28.5 m</span>
+          <div class="bg-[#F8FAFC] p-2.5 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[#0D4F60]/70 block font-medium">Tapacanto PVC 2mm</span>
+            <span id="metricCanto" class="font-extrabold text-[#103E4A] font-mono text-xs">28.5 m</span>
           </div>
-          <div class="bg-[#09252D] p-2.5 rounded-xl border border-[#0D4F60]">
-            <span class="text-[#F0EEE8]/60 block">Herrajes Clave</span>
-            <span id="metricHerrajes" class="font-bold text-[#FFFFFF] font-mono text-xs">6 bis. + 2 corr.</span>
+          <div class="bg-[#F8FAFC] p-2.5 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[#0D4F60]/70 block font-medium">Herrajes Clave</span>
+            <span id="metricHerrajes" class="font-extrabold text-[#103E4A] font-mono text-xs">6 bis. + 2 corr.</span>
           </div>
         </div>
 
         <!-- Precio Total Cotizado -->
-        <div class="pt-2 border-t border-[#0D4F60] flex items-center justify-between">
+        <div class="pt-2 border-t border-[#0D4F60]/15 flex items-center justify-between">
           <div>
-            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/60 block">Precio Venta Taller</span>
-            <span id="lblPrecioTotal" class="text-xl sm:text-2xl font-black text-[#ED991F] font-mono">$ 3.850.000</span>
+            <span class="text-[10px] uppercase font-bold text-[#0D4F60]/70 block">Precio Venta Taller</span>
+            <span id="lblPrecioTotal" class="text-xl sm:text-2xl font-black text-[#E58D17] font-mono">$ 3.850.000</span>
           </div>
-          <span class="text-[10px] text-emerald-400 bg-emerald-950/80 border border-emerald-500/30 px-2 py-0.5 rounded font-semibold">
+          <span class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-300 px-2 py-0.5 rounded font-bold">
             Margen 45%
           </span>
         </div>

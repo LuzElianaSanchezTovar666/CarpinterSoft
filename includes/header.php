@@ -65,34 +65,34 @@ $paginaActual = basename($_SERVER['PHP_SELF'], '.php');
       --gris-claro: #F0EEE8;
     }
 
-    /* Scrollbar con paleta personalizada */
+    /* Scrollbar con paleta personalizada en fondo claro */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #103E4A; }
+    ::-webkit-scrollbar-track { background: #F0EEE8; }
     ::-webkit-scrollbar-thumb { background: #ED991F; border-radius: 9999px; }
     ::-webkit-scrollbar-thumb:hover { background: #E58D17; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     
-    /* Estilo Retro-Futurista: Fondo Blueprint sutil y Bento Grid */
+    /* Estilo Retro-Futurista: Fondo Blanco con Blueprint Técnico Sutil */
     body {
-      background-color: #09252D;
-      background-image: radial-gradient(rgba(13, 79, 96, 0.45) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background-color: #FFFFFF;
+      background-image: radial-gradient(rgba(13, 79, 96, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
     }
 
-    /* Tarjetas Bento Grid Retro-Futuristas */
+    /* Tarjetas Bento Grid en Fondo Blanco con Alto Contraste */
     .bento-card {
-      background: linear-gradient(145deg, rgba(16, 62, 74, 0.88), rgba(9, 37, 45, 0.95));
-      border: 1px solid rgba(13, 79, 96, 0.85);
+      background: #FFFFFF;
+      border: 1px solid rgba(13, 79, 96, 0.18);
       border-radius: 1.25rem;
-      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px -2px rgba(16, 62, 74, 0.06);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
 
     .bento-card:hover {
-      border-color: rgba(237, 153, 31, 0.65);
-      box-shadow: 0 10px 30px -10px rgba(237, 153, 31, 0.12), inset 0 1px 0 rgba(237, 153, 31, 0.2);
+      border-color: #ED991F;
+      box-shadow: 0 12px 30px -8px rgba(237, 153, 31, 0.2), 0 4px 12px -2px rgba(16, 62, 74, 0.08);
       transform: translateY(-2px);
     }
 
@@ -103,8 +103,9 @@ $paginaActual = basename($_SERVER['PHP_SELF'], '.php');
       top: 6px;
       right: 10px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: rgba(237, 153, 31, 0.4);
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(237, 153, 31, 0.6);
       pointer-events: none;
     }
 
@@ -114,4 +115,4 @@ $paginaActual = basename($_SERVER['PHP_SELF'], '.php');
     }
   </style>
 </head>
-<body class="bg-[#09252D] text-crema min-h-screen flex flex-col font-sans selection:bg-naranja selection:text-petroleo-profundo antialiased">
+<body class="bg-[#FFFFFF] text-[#103E4A] min-h-screen flex flex-col font-sans selection:bg-[#ED991F] selection:text-white antialiased">

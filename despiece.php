@@ -87,14 +87,14 @@ $utilidad = $precioSugerido - $costoTotal;
 <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
 
   <!-- Encabezado -->
-  <div class="bg-[#103E4A]/80 border border-[#0D4F60] p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
+  <div class="bg-white border border-[#0D4F60]/20 p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
     <div>
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#09252D] text-[#ED991F] text-xs font-semibold border border-[#ED991F]/30 mb-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#103E4A] text-[#ED991F] text-xs font-semibold border border-[#ED991F]/30 mb-2">
         <i data-lucide="scissors" class="w-3.5 h-3.5"></i>
         Optimizador & Cotizador Paramétrico (PHP Engine)
       </div>
-      <h2 class="text-xl sm:text-2xl font-black text-[#FFFFFF] font-display">Calculadora de Muebles & Despiece</h2>
-      <p class="text-[#F0EEE8]/80 text-xs sm:text-sm mt-1">
+      <h2 class="text-xl sm:text-2xl font-black text-[#103E4A] font-display">Calculadora de Muebles & Despiece</h2>
+      <p class="text-[#103E4A]/70 text-xs sm:text-sm mt-1">
         Ingresa las medidas finales del mueble y el motor PHP calculará el despiece exacto para escuadradora o corte CNC, rendimiento de tableros y cotización.
       </p>
     </div>
@@ -104,21 +104,21 @@ $utilidad = $precioSugerido - $costoTotal;
     
     <!-- Formulario de Parámetros (5 cols) -->
     <div class="lg:col-span-5 space-y-6">
-      <form method="POST" action="despiece.php" class="bg-[#103E4A]/80 border border-[#0D4F60] p-5 rounded-2xl space-y-4 shadow-xl">
-        <h3 class="text-sm font-bold text-[#FFFFFF] uppercase tracking-wider font-display flex items-center gap-2 border-b border-[#0D4F60] pb-3">
+      <form method="POST" action="despiece.php" class="bg-white border border-[#0D4F60]/20 p-5 rounded-2xl space-y-4 shadow-sm">
+        <h3 class="text-sm font-bold text-[#103E4A] uppercase tracking-wider font-display flex items-center gap-2 border-b border-[#0D4F60]/15 pb-3">
           <i data-lucide="settings-2" class="w-4 h-4 text-[#ED991F]"></i>
           1. Especificaciones del Proyecto
         </h3>
 
         <div>
-          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Nombre del Proyecto</label>
-          <input type="text" name="proyecto" value="<?= htmlspecialchars($proyecto) ?>" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] focus:outline-none focus:border-[#ED991F]">
+          <label class="block text-xs font-semibold text-[#103E4A] mb-1">Nombre del Proyecto</label>
+          <input type="text" name="proyecto" value="<?= htmlspecialchars($proyecto) ?>" class="w-full px-3 py-2 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] focus:bg-white focus:outline-none focus:border-[#ED991F]">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Tipo de Mueble</label>
-            <select name="categoria" onchange="this.form.submit()" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#F7F5EF]">
+            <label class="block text-xs font-semibold text-[#103E4A] mb-1">Tipo de Mueble</label>
+            <select name="categoria" onchange="this.form.submit()" class="w-full px-3 py-2 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] focus:bg-white focus:border-[#ED991F]">
               <option value="Cocina" <?= $categoria === 'Cocina' ? 'selected' : '' ?>>Cocina Integral</option>
               <option value="Closet" <?= $categoria === 'Closet' ? 'selected' : '' ?>>Clóset / Armario</option>
               <option value="Mesa" <?= $categoria === 'Mesa' ? 'selected' : '' ?>>Mesa de Comedor</option>
@@ -129,8 +129,8 @@ $utilidad = $precioSugerido - $costoTotal;
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Madera / Tablero</label>
-            <select name="madera" class="w-full px-3 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#F7F5EF]">
+            <label class="block text-xs font-semibold text-[#103E4A] mb-1">Madera / Tablero</label>
+            <select name="madera" class="w-full px-3 py-2 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] focus:bg-white focus:border-[#ED991F]">
               <option value="Melamina Pelíkano Roble Sinatra 18mm" <?= $madera === 'Melamina Pelíkano Roble Sinatra 18mm' ? 'selected' : '' ?>>Melamina Roble 18mm</option>
               <option value="Melamina Blanco Lino Mate 18mm" <?= $madera === 'Melamina Blanco Lino Mate 18mm' ? 'selected' : '' ?>>Melamina Blanco Mate 18mm</option>
               <option value="Madera Roble Americano Macizo 2 pulgadas" <?= $madera === 'Madera Roble Americano Macizo 2 pulgadas' ? 'selected' : '' ?>>Roble Macizo</option>
@@ -141,47 +141,47 @@ $utilidad = $precioSugerido - $costoTotal;
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1 flex items-center justify-between">
+          <label class="block text-xs font-semibold text-[#103E4A] mb-1 flex items-center justify-between">
             <span>Dimensiones Finales (cm)</span>
-            <span class="text-[11px] text-[#ED991F] font-mono">Alto x Ancho x Fondo</span>
+            <span class="text-[11px] text-[#ED991F] font-mono font-bold">Alto x Ancho x Fondo</span>
           </label>
           <div class="grid grid-cols-3 gap-2">
             <div>
-              <input type="number" name="alto" value="<?= $alto ?>" class="w-full px-2.5 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-mono">
-              <span class="block text-[10px] text-[#F0EEE8]/70 text-center mt-1">Alto (cm)</span>
+              <input type="number" name="alto" value="<?= $alto ?>" class="w-full px-2.5 py-2 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] text-center font-mono font-bold focus:bg-white focus:border-[#ED991F]">
+              <span class="block text-[10px] text-[#103E4A]/70 text-center mt-1">Alto (cm)</span>
             </div>
             <div>
-              <input type="number" name="ancho" value="<?= $ancho ?>" class="w-full px-2.5 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-mono">
-              <span class="block text-[10px] text-[#F0EEE8]/70 text-center mt-1">Ancho (cm)</span>
+              <input type="number" name="ancho" value="<?= $ancho ?>" class="w-full px-2.5 py-2 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] text-center font-mono font-bold focus:bg-white focus:border-[#ED991F]">
+              <span class="block text-[10px] text-[#103E4A]/70 text-center mt-1">Ancho (cm)</span>
             </div>
             <div>
-              <input type="number" name="fondo" value="<?= $fondo ?>" class="w-full px-2.5 py-2 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-mono">
-              <span class="block text-[10px] text-[#F0EEE8]/70 text-center mt-1">Fondo (cm)</span>
+              <input type="number" name="fondo" value="<?= $fondo ?>" class="w-full px-2.5 py-2 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] text-center font-mono font-bold focus:bg-white focus:border-[#ED991F]">
+              <span class="block text-[10px] text-[#103E4A]/70 text-center mt-1">Fondo (cm)</span>
             </div>
           </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-2 pt-2 border-t border-[#0D4F60]">
+        <div class="grid grid-cols-3 gap-2 pt-2 border-t border-[#0D4F60]/15">
           <div>
-            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1 text-center">Puertas</label>
-            <input type="number" name="puertas" min="0" max="8" value="<?= $puertas ?>" class="w-full px-2 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-bold">
+            <label class="block text-[11px] font-semibold text-[#103E4A] mb-1 text-center">Puertas</label>
+            <input type="number" name="puertas" min="0" max="8" value="<?= $puertas ?>" class="w-full px-2 py-1.5 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] text-center font-bold focus:bg-white focus:border-[#ED991F]">
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1 text-center">Gavetas</label>
-            <input type="number" name="gavetas" min="0" max="8" value="<?= $gavetas ?>" class="w-full px-2 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-bold">
+            <label class="block text-[11px] font-semibold text-[#103E4A] mb-1 text-center">Gavetas</label>
+            <input type="number" name="gavetas" min="0" max="8" value="<?= $gavetas ?>" class="w-full px-2 py-1.5 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] text-center font-bold focus:bg-white focus:border-[#ED991F]">
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-[#F7F5EF] mb-1 text-center">Repisas</label>
-            <input type="number" name="repisas" min="0" max="10" value="<?= $repisas ?>" class="w-full px-2 py-1.5 bg-[#09252D] border border-[#0D4F60] rounded-xl text-xs text-[#FFFFFF] text-center font-bold">
+            <label class="block text-[11px] font-semibold text-[#103E4A] mb-1 text-center">Repisas</label>
+            <input type="number" name="repisas" min="0" max="10" value="<?= $repisas ?>" class="w-full px-2 py-1.5 bg-[#F7F5EF] border border-[#0D4F60]/20 rounded-xl text-xs text-[#103E4A] text-center font-bold focus:bg-white focus:border-[#ED991F]">
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-[#F7F5EF] mb-1">Margen de Ganancia del Taller: <?= $margen ?>%</label>
+          <label class="block text-xs font-semibold text-[#103E4A] mb-1">Margen de Ganancia del Taller: <span class="font-bold text-[#ED991F]"><?= $margen ?>%</span></label>
           <input type="range" name="margen" min="15" max="75" step="5" value="<?= $margen ?>" onchange="this.form.submit()" class="w-full accent-[#ED991F]">
         </div>
 
-        <button type="submit" class="w-full py-2.5 rounded-xl bg-[#0D4F60] hover:bg-[#1A677B] text-[#FFFFFF] font-bold text-xs border border-[#ED991F]/40 transition-all shadow">
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-[#103E4A] hover:bg-[#0D4F60] text-white font-bold text-xs border border-[#103E4A] transition-all shadow-xs cursor-pointer">
           Recalcular Despiece
         </button>
       </form>
@@ -191,54 +191,54 @@ $utilidad = $precioSugerido - $costoTotal;
     <div class="lg:col-span-7 space-y-6">
       
       <!-- Resumen Económico -->
-      <div class="bg-gradient-to-br from-[#103E4A] via-[#0D4F60] to-[#103E4A] border border-[#ED991F]/30 p-6 rounded-2xl shadow-2xl">
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-[#0D4F60]">
-          <div>
-            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Área Estimada</span>
-            <span class="text-xl font-black text-[#FFFFFF] font-mono"><?= round($totalAreaM2, 2) ?> m²</span>
-            <span class="text-[10px] text-[#F0EEE8]/60 block"><?= count($piezas) ?> piezas</span>
+      <div class="bg-white border border-[#0D4F60]/20 p-6 rounded-2xl shadow-sm">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-6 border-b border-[#0D4F60]/15">
+          <div class="bg-[#F7F5EF] p-3 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[10px] uppercase font-bold text-[#103E4A]/70 block">Área Estimada</span>
+            <span class="text-xl font-black text-[#103E4A] font-mono"><?= round($totalAreaM2, 2) ?> m²</span>
+            <span class="text-[10px] text-[#103E4A]/60 block"><?= count($piezas) ?> piezas</span>
           </div>
-          <div>
-            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Tableros 2.44x1.83</span>
-            <span class="text-xl font-black text-[#ED991F] font-mono"><?= $planchasRequeridas ?> planchas</span>
-            <span class="text-[10px] text-[#F0EEE8]/60 block">rendimiento ~80%</span>
+          <div class="bg-[#F7F5EF] p-3 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[10px] uppercase font-bold text-[#103E4A]/70 block">Tableros 2.44x1.83</span>
+            <span class="text-xl font-black text-[#103E4A] font-mono"><?= $planchasRequeridas ?> planchas</span>
+            <span class="text-[10px] text-[#103E4A]/60 block">rendimiento ~80%</span>
           </div>
-          <div>
-            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Tapacanto PVC</span>
-            <span class="text-xl font-black text-[#F7F5EF] font-mono"><?= round($metrosCanto, 1) ?> m</span>
-            <span class="text-[10px] text-[#F0EEE8]/60 block">lineales requeridos</span>
+          <div class="bg-[#F7F5EF] p-3 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[10px] uppercase font-bold text-[#103E4A]/70 block">Tapacanto PVC</span>
+            <span class="text-xl font-black text-[#103E4A] font-mono"><?= round($metrosCanto, 1) ?> m</span>
+            <span class="text-[10px] text-[#103E4A]/60 block">lineales requeridos</span>
           </div>
-          <div>
-            <span class="text-[10px] uppercase font-bold text-[#F0EEE8]/70 block">Herrajes</span>
+          <div class="bg-[#F7F5EF] p-3 rounded-xl border border-[#0D4F60]/15">
+            <span class="text-[10px] uppercase font-bold text-[#103E4A]/70 block">Herrajes</span>
             <span class="text-xl font-black text-[#ED991F] font-mono"><?= $puertas * 2 ?>B / <?= $gavetas ?>C</span>
-            <span class="text-[10px] text-[#F0EEE8]/60 block">bisagras/correderas</span>
+            <span class="text-[10px] text-[#103E4A]/60 block">bisagras/correderas</span>
           </div>
         </div>
 
-        <div class="py-4 space-y-2 border-b border-[#0D4F60] text-xs">
-          <div class="flex justify-between text-[#F0EEE8]/80">
+        <div class="py-4 space-y-2 border-b border-[#0D4F60]/15 text-xs text-[#103E4A]">
+          <div class="flex justify-between text-[#103E4A]/80">
             <span>Materia prima (tableros):</span>
-            <span class="font-mono text-[#FFFFFF]"><?= formatCOP($costoMaterial) ?></span>
+            <span class="font-mono font-semibold text-[#103E4A]"><?= formatCOP($costoMaterial) ?></span>
           </div>
-          <div class="flex justify-between text-[#F0EEE8]/80">
+          <div class="flex justify-between text-[#103E4A]/80">
             <span>Herrajes y tiradores:</span>
-            <span class="font-mono text-[#FFFFFF]"><?= formatCOP($costoHerrajes) ?></span>
+            <span class="font-mono font-semibold text-[#103E4A]"><?= formatCOP($costoHerrajes) ?></span>
           </div>
-          <div class="flex justify-between text-[#F0EEE8]/80">
+          <div class="flex justify-between text-[#103E4A]/80">
             <span>Mano de obra (corte y ensamble):</span>
-            <span class="font-mono text-[#FFFFFF]"><?= formatCOP($costoManoObra) ?></span>
+            <span class="font-mono font-semibold text-[#103E4A]"><?= formatCOP($costoManoObra) ?></span>
           </div>
-          <div class="flex justify-between text-[#F7F5EF] font-bold pt-1 border-t border-[#0D4F60]">
+          <div class="flex justify-between text-[#103E4A] font-bold pt-1 border-t border-[#0D4F60]/15">
             <span>Costo Total Directo del Taller:</span>
-            <span class="font-mono text-[#ED991F]"><?= formatCOP($costoTotal) ?></span>
+            <span class="font-mono text-[#103E4A] font-bold"><?= formatCOP($costoTotal) ?></span>
           </div>
         </div>
 
         <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span class="text-[11px] font-semibold text-[#F0EEE8]/70 uppercase tracking-wider">Precio Sugerido al Cliente:</span>
+            <span class="text-[11px] font-semibold text-[#103E4A]/70 uppercase tracking-wider">Precio Sugerido al Cliente:</span>
             <div class="text-3xl font-black text-[#ED991F] font-display"><?= formatCOP($precioSugerido) ?></div>
-            <p class="text-xs text-[#F7F5EF] font-medium">Utilidad estimada: <span class="text-[#ED991F]"><?= formatCOP($utilidad) ?></span> (<?= $margen ?>%)</p>
+            <p class="text-xs text-[#103E4A] font-medium">Utilidad estimada: <span class="text-[#ED991F] font-bold"><?= formatCOP($utilidad) ?></span> (<?= $margen ?>%)</p>
           </div>
 
           <form action="api/guardar_pedido.php" method="POST">
@@ -254,7 +254,7 @@ $utilidad = $precioSugerido - $costoTotal;
             <input type="hidden" name="cliente" value="Cliente de Cotizador">
             <input type="hidden" name="fecha_entrega" value="<?= date('Y-m-d', strtotime('+15 days')) ?>">
             <input type="hidden" name="prioridad" value="media">
-            <button type="submit" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#ED991F] to-[#E58D17] text-[#103E4A] font-extrabold text-xs sm:text-sm shadow-lg shadow-orange-950/50 hover:opacity-90 cursor-pointer">
+            <button type="submit" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#ED991F] to-[#E58D17] text-[#103E4A] font-extrabold text-xs sm:text-sm shadow-md hover:opacity-90 cursor-pointer transition-all">
               <i data-lucide="plus-circle" class="w-4 h-4"></i>
               <span>Convertir a Pedido</span>
             </button>
@@ -263,10 +263,10 @@ $utilidad = $precioSugerido - $costoTotal;
       </div>
 
       <!-- Tabla de Despiece para Escuadradora -->
-      <div class="bg-[#103E4A]/80 border border-[#0D4F60] rounded-2xl overflow-hidden shadow-xl">
-        <div class="p-4 bg-[#09252D] border-b border-[#0D4F60] flex items-center justify-between">
+      <div class="bg-white border border-[#0D4F60]/20 rounded-2xl overflow-hidden shadow-sm">
+        <div class="p-4 bg-[#103E4A] border-b border-[#0D4F60]/20 flex items-center justify-between">
           <div>
-            <h4 class="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider font-display flex items-center gap-2">
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider font-display flex items-center gap-2">
               <i data-lucide="file-text" class="w-4 h-4 text-[#ED991F]"></i>
               Plano de Despiece de Corte (<?= count($piezas) ?> piezas)
             </h4>
@@ -277,8 +277,8 @@ $utilidad = $precioSugerido - $costoTotal;
         </div>
 
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs text-[#F0EEE8] font-mono">
-            <thead class="bg-[#0D4F60]/60 text-[#F7F5EF] text-[10px] uppercase font-bold tracking-wider border-b border-[#0D4F60]">
+          <table class="w-full text-left text-xs text-[#103E4A] font-mono">
+            <thead class="bg-[#F7F5EF] text-[#103E4A] text-[10px] uppercase font-bold tracking-wider border-b border-[#0D4F60]/15">
               <tr>
                 <th class="p-3">Pieza</th>
                 <th class="p-3 text-center">Cant.</th>
@@ -289,16 +289,16 @@ $utilidad = $precioSugerido - $costoTotal;
                 <th class="p-3">Veta</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-[#0D4F60]/80">
+            <tbody class="divide-y divide-[#0D4F60]/10">
               <?php foreach ($piezas as $pz): ?>
-                <tr class="hover:bg-[#0D4F60]/40">
-                  <td class="p-3 font-sans font-semibold text-[#FFFFFF]"><?= htmlspecialchars($pz['nombre']) ?></td>
+                <tr class="hover:bg-[#F7F5EF]/60 transition-colors">
+                  <td class="p-3 font-sans font-semibold text-[#103E4A]"><?= htmlspecialchars($pz['nombre']) ?></td>
                   <td class="p-3 text-center font-bold text-[#ED991F]"><?= $pz['cantidad'] ?></td>
-                  <td class="p-3 text-center text-[#F7F5EF]"><?= $pz['largo'] ?></td>
-                  <td class="p-3 text-center text-[#F7F5EF]"><?= $pz['ancho'] ?></td>
-                  <td class="p-3 text-center text-[#F0EEE8]/70"><?= $pz['espesor'] ?> mm</td>
-                  <td class="p-3 font-sans text-[11px] text-[#F7F5EF]"><?= htmlspecialchars($pz['canto']) ?></td>
-                  <td class="p-3 font-sans text-[11px] text-[#ED991F] capitalize"><?= $pz['veta'] ?></td>
+                  <td class="p-3 text-center text-[#103E4A] font-semibold"><?= $pz['largo'] ?></td>
+                  <td class="p-3 text-center text-[#103E4A] font-semibold"><?= $pz['ancho'] ?></td>
+                  <td class="p-3 text-center text-[#103E4A]/70"><?= $pz['espesor'] ?> mm</td>
+                  <td class="p-3 font-sans text-[11px] text-[#103E4A]/80"><?= htmlspecialchars($pz['canto']) ?></td>
+                  <td class="p-3 font-sans text-[11px] text-[#ED991F] font-bold capitalize"><?= $pz['veta'] ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>

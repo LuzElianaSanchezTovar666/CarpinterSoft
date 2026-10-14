@@ -39,23 +39,23 @@ html {
 
 body {
   font-family: var(--fuente-sans);
-  background-color: var(--azul-profundo);
-  color: var(--crema);
+  background-color: var(--blanco);
+  color: var(--azul-petroleo-oscuro);
   min-height: 100vh;
 }
 
-/* --- Scrollbar Personalizada (Paleta CarpinterSoft) --- */
+/* --- Scrollbar Personalizada (Paleta CarpinterSoft en Fondo Blanco) --- */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--azul-petroleo-oscuro);
+  background: var(--gris-claro);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--naranja-oscuro);
+  background: var(--naranja);
   border-radius: 9999px;
 }
 
