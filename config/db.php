@@ -20,7 +20,7 @@ class Database {
         }
 
         $host = '127.0.0.1';
-        $ports = [3307, 3306]; // 3307 es el puerto oficial de MySQL en este XAMPP
+        $ports = [3607, 3307, 3306]; // Soporta 3607, 3307 (XAMPP activo) y 3306
         $db   = 'carpintersoft';
         $user = 'root';
         $pass = '';
